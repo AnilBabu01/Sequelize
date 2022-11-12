@@ -9,7 +9,7 @@ const Product = db.products;
 exports.addproduct = async (req, res) => {
   let info = {
     title: req.body.title,
-    price: req.body.price,
+    price: null,
     description: req.body.description,
     published: req.body.published,
   };
