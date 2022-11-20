@@ -1,25 +1,25 @@
 module.exports = (sequelize, DataTypes) => {
-  const Product = sequelize.define("product", {
+  const Product = sequelize.define("userpost", {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
-    title: {
+    email: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    price: {
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    otp: {
       type: DataTypes.INTEGER,
       allowNull: true,
-    },
-    description: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-    },
-    published: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
     },
   });
 

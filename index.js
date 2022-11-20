@@ -13,9 +13,10 @@ app.get("/api", (req, res) => {
   res.send("Api is working on Port " + port);
 });
 
-const product = require("./routes/product");
-
-app.use("/api", product);
+const user = require("./routes/user");
+const post = require("./routes/post");
+app.use("/api/auth", user);
+app.use("/api", post);
 app.listen(port, () => {
   console.log(`backend listening at http://localhost:${port}`);
 });

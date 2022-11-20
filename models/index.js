@@ -26,11 +26,14 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.products = require("./products.js")(sequelize, DataTypes);
-db.reviews = require("./reviews.js")(sequelize, DataTypes);
+db.users = require("./user")(sequelize, DataTypes);
+db.posts = require("./post")(sequelize, DataTypes);
+
+db.users.hasOne(db.posts, { foreignKey: "userid" });
+db.posts.belongsTo(db.users, { foreignKey: "userid" });
 
 sequelize
-  .sync({ force: false })
+  .sync({ force: false, alter: true })
   .then(() => {
     console.log("Re-sync successfully!");
   })

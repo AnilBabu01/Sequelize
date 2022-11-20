@@ -1,16 +1,16 @@
 module.exports = (sequelize, DataTypes) => {
-  const review = sequelize.define("review", {
+  const review = sequelize.define("post", {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
-    reting: {
-      type: DataTypes.INTEGER,
+    comment: {
+      type: DataTypes.TEXT,
       allowNull: false,
     },
-    description: {
-      type: DataTypes.TEXT,
+    userid: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   });
